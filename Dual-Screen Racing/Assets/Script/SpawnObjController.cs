@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class SpawnObjController : MonoBehaviour
 {
-    public GameObject objLeft;
-    public GameObject objRight;
+    public GameObject obstacleLeft;
+
+    public GameObject obstacleRight;
 
     public GameObject prop1;
 
     public GameObject prop2;
 
     public bool isStopSpawn = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnObj", 1, 2);
+        InvokeRepeating("SpawnObj", 3, 2);
     }
 
     // Update is called once per frame
@@ -27,20 +29,17 @@ public class SpawnObjController : MonoBehaviour
     void SpawnObj()
     {
         // Randomly spawn objects
-
         if (isStopSpawn)
         {
             return;
         }
 
-        GameObject clone = Instantiate(objLeft, transform);
+        GameObject cloneObstacleLeft = Instantiate(obstacleLeft, transform);
 
-        GameObject clone2 = Instantiate(objRight, transform);
+        GameObject cloneObstacleRight = Instantiate(obstacleRight, transform);
 
-        GameObject clone3 = Instantiate(prop1, transform);
+        GameObject cloneProp1 = Instantiate(prop1, transform);
 
-        GameObject clone4 = Instantiate(prop2, transform);
-
-
+        GameObject cloneProp2 = Instantiate(prop2, transform);
     }
 }

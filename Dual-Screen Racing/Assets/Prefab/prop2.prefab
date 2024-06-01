@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6855281406839082468}
   - component: {fileID: 3296266555775116390}
   - component: {fileID: 1426886265540379415}
-  m_Layer: 5
-  m_Name: prop2
+  m_Layer: 0
+  m_Name: Prop2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9056604, g: 0, b: 0.89446765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206844e67d134459796b078a6ab49bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 200
   speed: 200
 --- !u!61 &1426886265540379415
 BoxCollider2D:

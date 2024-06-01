@@ -1,114 +1,77 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using TMPro;
-using System;
 
 public class CarMove : MonoBehaviour
 {
-    public float speed = 10f;
+    public float carSpeed = 200f;
 
     public bool actionAD = false;
 
-    public TextMeshProUGUI scoreText;
+    public float boundLeft = -885f;
 
-    float currentScore = 0f;
+    public float boundRight = -75f;
 
-    float bonus = 1.0f;
+    public bool canMove = true;
 
-    public float boundLeft = -2.5f;
-
-    public float boundRight = 2.5f;
-    // Start is called before the first frame update
     void Start()
     {
-        if (scoreText != null)
-        {
-            InvokeRepeating("CalculateScore", 1, 1);
-        }
-
+        print(transform.GetComponent<RectTransform>().anchoredPosition.x);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (!canMove)
+        {
+            return;
+        }
 
-        // print the position of the car
-        print(transform.GetComponent<RectTransform>().anchoredPosition.x);
+        float posX = transform.GetComponent<RectTransform>().anchoredPosition.x;
 
-
-        // A&D
         if (actionAD)
         {
-            if (Input.GetKey(KeyCode.A) && transform.GetComponent<RectTransform>().anchoredPosition.x > boundLeft)
+            if (Input.GetKey(KeyCode.A) && posX > boundLeft)
             {
-                transform.Translate(Vector3.left * speed * Time.deltaTime);
+                transform.Translate(Vector3.left * carSpeed * Time.deltaTime);
             }
-            if (Input.GetKey(KeyCode.D) && transform.GetComponent<RectTransform>().anchoredPosition.x < boundRight)
+            if (Input.GetKey(KeyCode.D) && posX < boundRight)
             {
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
+                transform.Translate(Vector3.right * carSpeed * Time.deltaTime);
             }
         }
-        // Left&Right
         else
         {
-            if (Input.GetKey(KeyCode.LeftArrow) && transform.GetComponent<RectTransform>().anchoredPosition.x > boundLeft)
+            if (Input.GetKey(KeyCode.LeftArrow) && posX > boundLeft)
             {
-                transform.Translate(Vector3.left * speed * Time.deltaTime);
+                transform.Translate(Vector3.left * carSpeed * Time.deltaTime);
             }
-            if (Input.GetKey(KeyCode.RightArrow) && transform.GetComponent<RectTransform>().anchoredPosition.x < boundRight)
+            if (Input.GetKey(KeyCode.RightArrow) && posX < boundRight)
             {
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
+                transform.Translate(Vector3.right * carSpeed * Time.deltaTime);
             }
-
         }
-
-
     }
-
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        GameController gameController = FindObjectOfType<GameController>();
+
         if (other.gameObject.tag == "Obstacle")
         {
             Time.timeScale = 0;
-            //Destroy(gameObject);
         }
 
-        if (other.gameObject.name.Contains("prop1"))
+        if (other.gameObject.name.Contains("Prop1"))
         {
             Destroy(other.gameObject);
-            if (transform.name == "Car1")
-            {
-                FindObjectOfType<CarController>().Zoom1Stop();
-            }
-            else
-            {
-                FindObjectOfType<CarController>().Zoom2Stop();
-            }
+            gameController.SwitchScreen(transform.name);
+            canMove = false;
         }
 
-        if (other.gameObject.name.Contains("prop2"))
+        if (other.gameObject.name.Contains("Prop2"))
         {
             Destroy(other.gameObject);
             actionAD = !actionAD;
-            StartCoroutine(BonusScore());
+            gameController.ActivateBonus();
         }
-    }
-
-
-    void CalculateScore()
-    {
-        currentScore += bonus;
-        scoreText.text = currentScore.ToString();
-    }
-
-
-    IEnumerator BonusScore()
-    {
-        bonus = 2.0f;
-        yield return new WaitForSeconds(5.0f);
-        bonus = 1.0f;
     }
 }
