@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CarMove : MonoBehaviour
 {
-    public float carSpeed = 200f;
+    public float carSpeed = 300f;
 
     public bool actionAD = false;
 
@@ -64,6 +64,7 @@ public class CarMove : MonoBehaviour
         {
             Destroy(other.gameObject);
             gameController.SwitchScreen(transform.name);
+            gameController.OneTimeBonus();
             canMove = false;
         }
 

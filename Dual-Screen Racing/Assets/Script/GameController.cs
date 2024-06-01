@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     private readonly float baseScore = 1.0f;
 
     // game duration, unit is second
-    private float gameDuration = 20f;
+    private float gameDuration = 30f;
 
     void Start()
     {
@@ -123,6 +123,12 @@ public class GameController : MonoBehaviour
     void CalculateScore()
     {
         currentScore += baseScore * scoreMultiplier;
+        scoreText.text = "Score: " + currentScore.ToString("F0");
+    }
+
+    public void OneTimeBonus()
+    {
+        currentScore += 5;
         scoreText.text = "Score: " + currentScore.ToString("F0");
     }
 
