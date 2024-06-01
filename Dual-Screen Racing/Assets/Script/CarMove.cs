@@ -8,9 +8,9 @@ public class CarMove : MonoBehaviour
 
     public bool actionAD = false;
 
-    public float boundLeft = -885f;
+    public float boundaryLeft = -850f;
 
-    public float boundRight = -75f;
+    public float boundaryRight = -50f;
 
     public bool canMove = true;
 
@@ -32,22 +32,22 @@ public class CarMove : MonoBehaviour
 
         if (actionAD)
         {
-            if (Input.GetKey(KeyCode.A) && posX > boundLeft)
+            if (Input.GetKey(KeyCode.A) && posX > boundaryLeft)
             {
                 transform.Translate(Vector3.left * carSpeed * Time.deltaTime);
             }
-            if (Input.GetKey(KeyCode.D) && posX < boundRight)
+            if (Input.GetKey(KeyCode.D) && posX < boundaryRight)
             {
                 transform.Translate(Vector3.right * carSpeed * Time.deltaTime);
             }
         }
         else
         {
-            if (Input.GetKey(KeyCode.LeftArrow) && posX > boundLeft)
+            if (Input.GetKey(KeyCode.LeftArrow) && posX > boundaryLeft)
             {
                 transform.Translate(Vector3.left * carSpeed * Time.deltaTime);
             }
-            if (Input.GetKey(KeyCode.RightArrow) && posX < boundRight)
+            if (Input.GetKey(KeyCode.RightArrow) && posX < boundaryRight)
             {
                 transform.Translate(Vector3.right * carSpeed * Time.deltaTime);
             }
