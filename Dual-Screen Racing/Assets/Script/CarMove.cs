@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class CarMove : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class CarMove : MonoBehaviour
     public float boundRight = -75f;
 
     public bool canMove = true;
+
+    public TextMeshProUGUI deathText;
 
     void Start()
     {
@@ -58,6 +61,8 @@ public class CarMove : MonoBehaviour
         if (other.gameObject.tag == "Obstacle")
         {
             Time.timeScale = 0;
+            deathText.text = "YOU DIED";
+            deathText.color = Color.red;
         }
 
         if (other.gameObject.name.Contains("Prop1"))

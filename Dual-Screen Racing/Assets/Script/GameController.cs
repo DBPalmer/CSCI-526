@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
 
+    public TextMeshProUGUI successText;
+
     public Transform carLeft;
 
     public Transform carRight;
@@ -53,6 +55,8 @@ public class GameController : MonoBehaviour
 
         // Pause the game when the game duration is over
         PauseGame();
+        successText.text = "LEVEL COMPLETED";
+        successText.color = Color.green;
     }
 
     void PauseGame()
