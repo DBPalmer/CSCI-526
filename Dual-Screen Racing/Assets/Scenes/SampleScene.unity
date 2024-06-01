@@ -1133,7 +1133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1682798608209473767, guid: 6fcff6eb873e645d69defb2965c32a7d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8013834637219093177, guid: 6fcff6eb873e645d69defb2965c32a7d, type: 3}
       propertyPath: m_Pivot.x
@@ -1242,7 +1242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3161231708506072461, guid: b96a8d71d3e0c46df96f230c93f3da0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6929434701563367059, guid: b96a8d71d3e0c46df96f230c93f3da0c, type: 3}
       propertyPath: m_Pivot.x
@@ -1470,7 +1470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5501790547788042364, guid: e3f02dda14ca642869097756636cbdfa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6511432589945642328, guid: e3f02dda14ca642869097756636cbdfa, type: 3}
       propertyPath: m_Pivot.x
@@ -1762,7 +1762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372833681358754523, guid: 85785bb7d3a1e48bb8360b0e6e9bd8b3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1783,7 +1783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2802853550590688207, guid: 9fb9d5b0297f845f39794a3055e0bc70, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6800709541200787811, guid: 9fb9d5b0297f845f39794a3055e0bc70, type: 3}
       propertyPath: m_Size.x
@@ -1972,7 +1972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6872324455893141424, guid: 08c77ff1dc40c4d099106ddd8a0e1cb6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
