@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class GameContrLvl2 : MonoBehaviour
 {
     public Transform zoom1;
 
@@ -83,47 +83,47 @@ public class GameController : MonoBehaviour
     public void CarLeftStop()
     {
         // stop zoom1 object movement
-        zoom1.GetComponent<SpawnObjController>().isStopSpawn = true;
+        zoom1.GetComponent<SpawnObjLvl2>().isStopSpawn = true;
         foreach (Transform t in zoom1)
         {
             t.GetComponent<ObjMove>().speed = 0;
         }
 
         // start zoom2 object movement
-        zoom2.GetComponent<SpawnObjController>().isStopSpawn = false;
+        zoom2.GetComponent<SpawnObjLvl2>().isStopSpawn = false;
         foreach (Transform t in zoom2)
         {
             t.GetComponent<ObjMove>().speed = t.GetComponent<ObjMove>().moveSpeed;
         }
 
         // stop CarLeft movement
-        carLeft.GetComponent<CarMove>().canMove = false;
+        carLeft.GetComponent<CarMoveLvl2>().canMove = false;
 
         // start CarRight movement
-        carRight.GetComponent<CarMove>().canMove = true;
+        carRight.GetComponent<CarMoveLvl2>().canMove = true;
     }
 
     public void CarRightStop()
     {
         // stop zoom2 object movement
-        zoom2.GetComponent<SpawnObjController>().isStopSpawn = true;
+        zoom2.GetComponent<SpawnObjLvl2>().isStopSpawn = true;
         foreach (Transform t in zoom2)
         {
             t.GetComponent<ObjMove>().speed = 0;
         }
 
         // start zoom1 object movement
-        zoom1.GetComponent<SpawnObjController>().isStopSpawn = false;
+        zoom1.GetComponent<SpawnObjLvl2>().isStopSpawn = false;
         foreach (Transform t in zoom1)
         {
             t.GetComponent<ObjMove>().speed = t.GetComponent<ObjMove>().moveSpeed;
         }
 
         // stop CarRight movement
-        carRight.GetComponent<CarMove>().canMove = false;
+        carRight.GetComponent<CarMoveLvl2>().canMove = false;
 
         // start CarLeft movement
-        carLeft.GetComponent<CarMove>().canMove = true;
+        carLeft.GetComponent<CarMoveLvl2>().canMove = true;
     }
 
     void CalculateScore()
