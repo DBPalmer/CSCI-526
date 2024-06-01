@@ -21,6 +21,9 @@ public class GameController : MonoBehaviour
 
     private readonly float baseScore = 1.0f;
 
+    // game duration, unit is second
+    private float gameDuration = 20f;
+
     void Start()
     {
         // Default start state
@@ -30,10 +33,33 @@ public class GameController : MonoBehaviour
         {
             InvokeRepeating("CalculateScore", 1, 1);
         }
+
+        // Start countdown timer
+        StartCoroutine(CountdownTimer());
     }
 
     void Update()
     {
+    }
+
+    IEnumerator CountdownTimer()
+    {
+        while (gameDuration > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            // Decrease game duration by 1 second
+            gameDuration -= 1f;
+        }
+
+        // Pause the game when the game duration is over
+        PauseGame();
+    }
+
+    void PauseGame()
+    {
+        // Stop the game
+        Time.timeScale = 0;
+        Debug.Log("Game Paused! Time's up.");
     }
 
     public void SwitchScreen(string carName)
