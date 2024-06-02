@@ -19,11 +19,11 @@ public class SpawnObjLvl2 : MonoBehaviour
 
     public float rightOffset = 200f;
 
-    private readonly float[] spawnObstacleTime = { 2, 3 };
+    private readonly float[] spawnObstacleTime = { 1, 4 };
 
-    private readonly float[] spawnProp1Time = { 5, 8 };
+    private readonly float[] spawnProp1Time = { 3, 6 };
 
-    private readonly float[] spawnProp2Time = { 5, 8 };
+    private readonly float[] spawnProp2Time = { 3, 6 };
 
     // Start is called before the first frame update
     void Start()

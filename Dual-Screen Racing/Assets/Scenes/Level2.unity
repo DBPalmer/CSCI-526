@@ -349,13 +349,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3296266555775116390, guid: f409e24cdc568420c9ffa72e21b8fdad, type: 3}
+      propertyPath: speed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296266555775116390, guid: f409e24cdc568420c9ffa72e21b8fdad, type: 3}
+      propertyPath: moveSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 6698776738839490836, guid: f409e24cdc568420c9ffa72e21b8fdad, type: 3}
       propertyPath: m_Name
       value: Prop2
       objectReference: {fileID: 0}
     - target: {fileID: 6698776738839490836, guid: f409e24cdc568420c9ffa72e21b8fdad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -712,13 +720,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436994cb29f834a18803b6b3e564d3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleLeft: {fileID: 2038414143752184709, guid: d496f14fc299b4031b8ffb94c6996825, type: 3}
-  obstacleRight: {fileID: 2802853550590688207, guid: 9fb9d5b0297f845f39794a3055e0bc70, type: 3}
-  prop1: {fileID: 6872324455893141424, guid: 08c77ff1dc40c4d099106ddd8a0e1cb6, type: 3}
-  prop2: {fileID: 8372833681358754523, guid: 85785bb7d3a1e48bb8360b0e6e9bd8b3, type: 3}
+  obstacleLeft: {fileID: 3161231708506072461, guid: a1c713ba14d2e4c138a4c8828532bc06, type: 3}
+  obstacleRight: {fileID: 5501790547788042364, guid: 78c6cb54cf8414c5fa7961be853d193c, type: 3}
+  prop1: {fileID: 1682798608209473767, guid: 8838c4e392e8c42b5b4cceb52e9f4165, type: 3}
+  prop2: {fileID: 6698776738839490836, guid: 8d9bb7f629aed4885b0085e1342c455a, type: 3}
   isStopSpawn: 0
-  leftOffset: -200
-  rightOffset: 200
+  leftOffset: -400
+  rightOffset: 400
 --- !u!1 &628698270
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,13 +799,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436994cb29f834a18803b6b3e564d3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleLeft: {fileID: 3161231708506072461, guid: b96a8d71d3e0c46df96f230c93f3da0c, type: 3}
-  obstacleRight: {fileID: 5501790547788042364, guid: e3f02dda14ca642869097756636cbdfa, type: 3}
-  prop1: {fileID: 1682798608209473767, guid: 6fcff6eb873e645d69defb2965c32a7d, type: 3}
-  prop2: {fileID: 6698776738839490836, guid: f409e24cdc568420c9ffa72e21b8fdad, type: 3}
+  obstacleLeft: {fileID: 3161231708506072461, guid: e26d88af8304647659bc4fa91b10aa42, type: 3}
+  obstacleRight: {fileID: 5501790547788042364, guid: 6b5e807eaac1648009d24ee8992d7d2f, type: 3}
+  prop1: {fileID: 1682798608209473767, guid: a499dcd8dce9944e8b1f8c5d4e192a6d, type: 3}
+  prop2: {fileID: 6698776738839490836, guid: 6f81021aa74a14a9c979f0b1eb503830, type: 3}
   isStopSpawn: 0
-  leftOffset: -200
-  rightOffset: 200
+  leftOffset: -400
+  rightOffset: 400
 --- !u!1 &633433489
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,6 +906,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 590400357}
     m_Modifications:
+    - target: {fileID: 2567651620758902234, guid: 9fb9d5b0297f845f39794a3055e0bc70, type: 3}
+      propertyPath: speed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567651620758902234, guid: 9fb9d5b0297f845f39794a3055e0bc70, type: 3}
+      propertyPath: moveSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 2802853550590688207, guid: 9fb9d5b0297f845f39794a3055e0bc70, type: 3}
       propertyPath: m_Name
       value: ObstacleRight
@@ -1291,6 +1307,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 590400357}
     m_Modifications:
+    - target: {fileID: 6397705193220754450, guid: 08c77ff1dc40c4d099106ddd8a0e1cb6, type: 3}
+      propertyPath: speed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397705193220754450, guid: 08c77ff1dc40c4d099106ddd8a0e1cb6, type: 3}
+      propertyPath: moveSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 6843849109545065604, guid: 08c77ff1dc40c4d099106ddd8a0e1cb6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1392,6 +1416,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 628698271}
     m_Modifications:
+    - target: {fileID: -8809244345944628601, guid: e3f02dda14ca642869097756636cbdfa, type: 3}
+      propertyPath: speed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: -8809244345944628601, guid: e3f02dda14ca642869097756636cbdfa, type: 3}
+      propertyPath: moveSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 273439380130896829, guid: e3f02dda14ca642869097756636cbdfa, type: 3}
       propertyPath: m_Size.x
       value: 400
@@ -1625,8 +1657,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carSpeed: 300
   actionAD: 0
-  boundLeft: 50
-  boundRight: 860
+  boundaryLeft: 100
+  boundaryRight: 860
   canMove: 1
   deathText: {fileID: 388493897}
 --- !u!114 &1232181375
@@ -1681,8 +1713,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carSpeed: 300
   actionAD: 0
-  boundLeft: 50
-  boundRight: 860
+  boundaryLeft: 100
+  boundaryRight: 860
   canMove: 1
   deathText: {fileID: 388493897}
 --- !u!1 &1240985839
@@ -1950,8 +1982,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carSpeed: 300
   actionAD: 1
-  boundLeft: -850
-  boundRight: -50
+  boundaryLeft: -860
+  boundaryRight: -100
   canMove: 1
   deathText: {fileID: 388493897}
 --- !u!114 &1298395606
@@ -2006,8 +2038,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carSpeed: 300
   actionAD: 1
-  boundLeft: -885
-  boundRight: -75
+  boundaryLeft: -860
+  boundaryRight: -100
   canMove: 1
   deathText: {fileID: 388493897}
 --- !u!224 &1357039669 stripped
@@ -2029,7 +2061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2038414143752184709, guid: d496f14fc299b4031b8ffb94c6996825, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2442207500447861395, guid: d496f14fc299b4031b8ffb94c6996825, type: 3}
       propertyPath: m_Size.x
@@ -2119,6 +2151,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8958715370867417803, guid: d496f14fc299b4031b8ffb94c6996825, type: 3}
+      propertyPath: speed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958715370867417803, guid: d496f14fc299b4031b8ffb94c6996825, type: 3}
+      propertyPath: moveSpeed
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2132,6 +2172,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 628698271}
     m_Modifications:
+    - target: {fileID: 1604363572531565285, guid: b96a8d71d3e0c46df96f230c93f3da0c, type: 3}
+      propertyPath: speed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1604363572531565285, guid: b96a8d71d3e0c46df96f230c93f3da0c, type: 3}
+      propertyPath: moveSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 1802474341989400753, guid: b96a8d71d3e0c46df96f230c93f3da0c, type: 3}
       propertyPath: m_Size.x
       value: 400
@@ -2321,6 +2369,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6801803695388791516, guid: 85785bb7d3a1e48bb8360b0e6e9bd8b3, type: 3}
+      propertyPath: speed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801803695388791516, guid: 85785bb7d3a1e48bb8360b0e6e9bd8b3, type: 3}
+      propertyPath: moveSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 8372833681358754523, guid: 85785bb7d3a1e48bb8360b0e6e9bd8b3, type: 3}
       propertyPath: m_Name
       value: Prop2
@@ -2347,6 +2403,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 628698271}
     m_Modifications:
+    - target: {fileID: -279700878142861245, guid: 6fcff6eb873e645d69defb2965c32a7d, type: 3}
+      propertyPath: speed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: -279700878142861245, guid: 6fcff6eb873e645d69defb2965c32a7d, type: 3}
+      propertyPath: moveSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 1682798608209473767, guid: 6fcff6eb873e645d69defb2965c32a7d, type: 3}
       propertyPath: m_Name
       value: Prop1

@@ -345,8 +345,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carSpeed: 300
   actionAD: 0
-  boundLeft: 50
-  boundRight: 860
+  boundaryLeft: 100
+  boundaryRight: 860
   canMove: 1
   deathText: {fileID: 479380157}
 --- !u!1 &361682390
@@ -1441,8 +1441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carSpeed: 300
   actionAD: 1
-  boundLeft: -850
-  boundRight: -50
+  boundaryLeft: -860
+  boundaryRight: -100
   canMove: 1
   deathText: {fileID: 479380157}
 --- !u!50 &1970730055
@@ -1899,7 +1899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2038414143752184709, guid: d496f14fc299b4031b8ffb94c6996825, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2442207500447861395, guid: d496f14fc299b4031b8ffb94c6996825, type: 3}
       propertyPath: m_Size.x
@@ -2217,7 +2217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6698776738839490836, guid: f409e24cdc568420c9ffa72e21b8fdad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
