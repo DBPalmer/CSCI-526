@@ -16,6 +16,8 @@ public class CarMove : MonoBehaviour
 
     public TextMeshProUGUI deathText;
 
+    public TextMeshProUGUI winText;
+
     public bool reversed = false;
 
 
@@ -66,8 +68,10 @@ public class CarMove : MonoBehaviour
         if (other.gameObject.tag == "Obstacle")
         {
             Time.timeScale = 0;
-            deathText.text = "YOU DIED";
+            deathText.text = "YOU LOSE";
             deathText.color = Color.red;
+            winText.text = "YOU WIN";
+            winText.color = Color.green;
             gameController.StopScoreCalculation(transform.name);
         }
 
