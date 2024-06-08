@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour
     private readonly float baseScore = 1.0f;
 
     // game duration, unit is second
-    private float gameDuration = 5f;
+    private float gameDuration = 30f;
 
     void Start()
     {
@@ -113,22 +113,15 @@ public class GameController : MonoBehaviour
         {
             carRight.GetComponent<CarMove>().carSpeed *= -1;
             carRight.GetComponent<CarMove>().reversed = !carRight.GetComponent<CarMove>().reversed;
-            if (carRight.GetComponent<CarMove>().reversed)
-            {
-                rightMsg.text = "REVERSE";
-            }
-            imageA.sprite = spriteD;
-            imageD.sprite = spriteA;
+            imageLeft.sprite = spriteRight;
+            imageRight.sprite = spriteLeft;
         }
         else
         {
             carLeft.GetComponent<CarMove>().carSpeed *= -1;
-            if (carLeft.GetComponent<CarMove>().reversed)
-            {
-                leftMsg.text = "REVERSE";
-            }
-            imageLeft.sprite = spriteRight;
-            imageRight.sprite = spriteLeft;
+            carLeft.GetComponent<CarMove>().reversed = !carLeft.GetComponent<CarMove>().reversed;
+            imageA.sprite = spriteD;
+            imageD.sprite = spriteA;
         }
     }
 
