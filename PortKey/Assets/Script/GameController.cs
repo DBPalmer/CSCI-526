@@ -20,6 +20,9 @@ public class GameController : MonoBehaviour
 
     public TextMeshProUGUI broadcastMsg;
 
+    public TextMeshProUGUI broadcastMsgLeft;
+    public TextMeshProUGUI broadcastMsgRight;
+
     public Transform carLeft;
 
     public Transform carRight;
@@ -84,8 +87,27 @@ public class GameController : MonoBehaviour
 
         // Pause the game when the game duration is over
         PauseGame();
-        broadcastMsg.text = "LEVEL COMPLETED";
-        broadcastMsg.color = Color.green;
+        if (currentLeftScore > currentRightScore)
+        {
+            broadcastMsg.text = "TIMES UP!";
+            broadcastMsg.color = Color.black;
+            broadcastMsgLeft.text = "YOU WIN";
+            broadcastMsgLeft.color = Color.green;
+            broadcastMsgRight.text = "YOU LOSE";
+            broadcastMsgRight.color = Color.red;
+        } else if (currentLeftScore < currentRightScore)
+        {
+            broadcastMsg.text = "TIMES UP!";
+            broadcastMsg.color = Color.black;
+            broadcastMsgRight.text = "YOU WIN";
+            broadcastMsgRight.color = Color.green;
+            broadcastMsgLeft.text = "YOU LOSE";
+            broadcastMsgLeft.color = Color.red;
+        } else
+        { //tie condition
+            broadcastMsg.text = "TIE!";
+            broadcastMsg.color = Color.yellow;
+        }
     }
 
     void PauseGame()
