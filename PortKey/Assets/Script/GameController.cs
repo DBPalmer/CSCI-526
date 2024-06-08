@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
     private readonly float baseScore = 1.0f;
 
     // game duration, unit is second
-    private float gameDuration = 3f;
+    private float gameDuration = 30f;
 
     void Start()
     {
@@ -94,16 +94,20 @@ public class GameController : MonoBehaviour
         {
             broadcastMsg.text = "TIMES UP!";
             broadcastMsg.color = Color.black;
+            broadcastMsgLeft.gameObject.SetActive(true);
             broadcastMsgLeft.text = "YOU WIN";
             broadcastMsgLeft.color = Color.green;
+            broadcastMsgRight.gameObject.SetActive(true);
             broadcastMsgRight.text = "YOU LOSE";
             broadcastMsgRight.color = Color.red;
         } else if (currentLeftScore < currentRightScore)
         {
             broadcastMsg.text = "TIMES UP!";
             broadcastMsg.color = Color.black;
+            broadcastMsgRight.gameObject.SetActive(true);
             broadcastMsgRight.text = "YOU WIN";
             broadcastMsgRight.color = Color.green;
+            broadcastMsgLeft.gameObject.SetActive(true);
             broadcastMsgLeft.text = "YOU LOSE";
             broadcastMsgLeft.color = Color.red;
         } else

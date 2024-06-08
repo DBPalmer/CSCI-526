@@ -25,6 +25,9 @@ public class SpawnObjController : MonoBehaviour
 
     private readonly float[] spawnProp2Time = { 5, 8 };
 
+    private bool firstSpawn = true;
+    GameObject lastPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,13 +57,35 @@ public class SpawnObjController : MonoBehaviour
             if (!isStopSpawn)
             {
                 int leftOrRight = Random.Range(0, 2);
+                GameObject obstacle;
                 if (leftOrRight == 0)
                 {
-                    GameObject cloneObstacleLeft = Instantiate(obstacleLeft, transform);
+                    obstacle = obstacleLeft;
                 }
                 else
                 {
-                    GameObject cloneObstacleRight = Instantiate(obstacleRight, transform);
+                    obstacle = obstacleRight;
+                }
+                if (firstSpawn)
+                {
+                    GameObject cloneObstacle = Instantiate(obstacle, transform);
+                    firstSpawn = false;
+                    lastPos = cloneObstacle;
+                }
+                else
+                {
+                    GameObject cloneObstacle = Instantiate(obstacle, transform);
+                    Debug.Log(lastPos.transform.position.y + " and " + cloneObstacle.transform.position.y);
+                    if (cloneObstacle.transform.position.y - lastPos.transform.position.y <= 250f)
+                    {
+                        Debug.Log("DO NOT PLACE");
+                        Destroy(cloneObstacle);
+                    }
+                    else
+                    {
+                        Debug.Log("PLACE");
+                        lastPos = cloneObstacle;
+                    }
                 }
             }
         }
