@@ -68,8 +68,10 @@ public class CarMove : MonoBehaviour
         if (other.gameObject.tag == "Obstacle")
         {
             Time.timeScale = 0;
+            deathText.gameObject.SetActive(true);
             deathText.text = "YOU LOSE";
             deathText.color = Color.red;
+            winText.gameObject.SetActive(true);
             winText.text = "YOU WIN";
             winText.color = Color.green;
             gameController.StopScoreCalculation(transform.name);
@@ -77,6 +79,7 @@ public class CarMove : MonoBehaviour
 
         if (other.gameObject.name.Contains("EnemyControlReverse"))
         {
+            DisplaySwithcMessage();
             Destroy(other.gameObject);
             gameController.EnemyControlReverse(transform.name);
         }
@@ -86,5 +89,19 @@ public class CarMove : MonoBehaviour
             Destroy(other.gameObject);
             gameController.OneTimeBonus(transform.name);
         }
+    }
+
+    public void DisplaySwithcMessage()
+    {
+        winText.text = "CONTROLS SWITCHED!";
+        winText.color = Color.blue;
+        winText.gameObject.SetActive(true);
+        StartCoroutine(HideSwitchMessage(1f));
+    }
+
+    private IEnumerator HideSwitchMessage(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        winText.gameObject.SetActive(false);
     }
 }
