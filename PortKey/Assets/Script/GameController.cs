@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI broadcastMsgLeft;
     public TextMeshProUGUI broadcastMsgRight;
 
+    public TextMeshProUGUI TimerMsg;
+
     public Transform carLeft;
 
     public Transform carRight;
@@ -52,7 +54,7 @@ public class GameController : MonoBehaviour
     private readonly float baseScore = 1.0f;
 
     // game duration, unit is second
-    private float gameDuration = 30f;
+    private float gameDuration = 3f;
 
     void Start()
     {
@@ -80,11 +82,12 @@ public class GameController : MonoBehaviour
     {
         while (gameDuration > 0)
         {
+            TimerMsg.text = "Time Remaining: " + Mathf.Ceil(gameDuration).ToString() + "s";
             yield return new WaitForSeconds(1f);
             // Decrease game duration by 1 second
             gameDuration -= 1f;
         }
-
+        TimerMsg.text = "Time Remaining: 0s";
         // Pause the game when the game duration is over
         PauseGame();
         if (currentLeftScore > currentRightScore)
@@ -105,7 +108,7 @@ public class GameController : MonoBehaviour
             broadcastMsgLeft.color = Color.red;
         } else
         { //tie condition
-            broadcastMsg.text = "TIE!";
+            broadcastMsg.text = "TIMES UP!\nTIE!";
             broadcastMsg.color = Color.yellow;
         }
     }
