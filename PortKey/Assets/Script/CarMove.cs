@@ -36,25 +36,50 @@ public class CarMove : MonoBehaviour
 
         if (transform.name == "CarLeft")
         {
-            if (Input.GetKey(KeyCode.A) && posX > boundaryLeft)
+            if (!reversed)
             {
-                transform.Translate(Vector3.left * carSpeed * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.D) && posX < boundaryRight)
+                if (Input.GetKey(KeyCode.A) && posX > boundaryLeft)
+                {
+                    transform.Translate(Vector3.left * carSpeed * Time.deltaTime);
+                }
+                if (Input.GetKey(KeyCode.D) && posX < boundaryRight)
+                {
+                    transform.Translate(Vector3.right * carSpeed * Time.deltaTime);
+                }
+            } else
             {
-                transform.Translate(Vector3.right * carSpeed * Time.deltaTime);
+                if (Input.GetKey(KeyCode.A) && posX < boundaryRight)
+                {
+                    transform.Translate(Vector3.left * carSpeed * Time.deltaTime);
+                }
+                if (Input.GetKey(KeyCode.D) && posX > boundaryLeft)
+                {
+                    transform.Translate(Vector3.right * carSpeed * Time.deltaTime);
+                }
             }
         }
 
         if (transform.name == "CarRight")
         {
-            if (Input.GetKey(KeyCode.LeftArrow) && posX > boundaryLeft)
+            if (!reversed)
             {
-                transform.Translate(Vector3.left * carSpeed * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.RightArrow) && posX < boundaryRight)
-            {
-                transform.Translate(Vector3.right * carSpeed * Time.deltaTime);
+                if (Input.GetKey(KeyCode.LeftArrow) && posX > boundaryLeft)
+                {
+                    transform.Translate(Vector3.left * carSpeed * Time.deltaTime);
+                }
+                if (Input.GetKey(KeyCode.RightArrow) && posX < boundaryRight)
+                {
+                    transform.Translate(Vector3.right * carSpeed * Time.deltaTime);
+                }
+            } else {
+                if (Input.GetKey(KeyCode.LeftArrow) && posX < boundaryRight)
+                {
+                    transform.Translate(Vector3.left * carSpeed * Time.deltaTime);
+                }
+                if (Input.GetKey(KeyCode.RightArrow) && posX > boundaryLeft)
+                {
+                    transform.Translate(Vector3.right * carSpeed * Time.deltaTime);
+                }
             }
         }
 

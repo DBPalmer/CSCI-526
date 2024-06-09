@@ -515,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1604363572531565285, guid: b96a8d71d3e0c46df96f230c93f3da0c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1604363572531565285, guid: b96a8d71d3e0c46df96f230c93f3da0c, type: 3}
       propertyPath: moveSpeed
@@ -2474,7 +2474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1604363572531565285, guid: b96a8d71d3e0c46df96f230c93f3da0c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1604363572531565285, guid: b96a8d71d3e0c46df96f230c93f3da0c, type: 3}
       propertyPath: moveSpeed
@@ -2596,14 +2596,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602126884}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edc2b231b3a1546a79fe997880284b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 300
   speed: 300
-  moveRange: 5
+  range: 100
+  oscillateSpeed: 50
 --- !u!1 &977417080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3161231708506072461, guid: b96a8d71d3e0c46df96f230c93f3da0c, type: 3}
@@ -2616,14 +2617,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977417080}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edc2b231b3a1546a79fe997880284b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 300
   speed: 300
-  moveRange: 5
+  range: 100
+  oscillateSpeed: 50
 --- !u!1 &1066698916
 GameObject:
   m_ObjectHideFlags: 0
@@ -4143,7 +4145,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1947239118}
   - component: {fileID: 1947239117}
-  - component: {fileID: 1947239119}
   m_Layer: 0
   m_Name: GameContorller
   m_TagString: Untagged
@@ -4198,27 +4199,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1947239119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1947239116}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86cc0978251d449c69d913122c4915ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zoom1: {fileID: 0}
-  zoom2: {fileID: 0}
-  scoreText: {fileID: 0}
-  successText: {fileID: 0}
-  carLeft: {fileID: 0}
-  carRight: {fileID: 0}
-  currentScore: 0
-  scoreMultiplier: 1
-  gameDuration: 30
 --- !u!1 &2022501909
 GameObject:
   m_ObjectHideFlags: 0
