@@ -686,7 +686,13 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -706,11 +712,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: acac20b7-5645-4828-baeb-0ee90bbe99cb
+  cloudProjectId: b4e3e2af-d789-4728-917f-bc4b5059d15f
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Dual-Screen Racing 2024-05-30_20-24-33
-  organizationId: chenlei9924
+  projectName: Dual-Screen Racing
+  organizationId: portkey-101
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
