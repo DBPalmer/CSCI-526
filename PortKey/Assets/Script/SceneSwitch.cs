@@ -9,11 +9,15 @@ public class SceneSwitch : MonoBehaviour
 {
     public void loaderLvl1()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
     public void loaderLvl2()
     {
         SceneManager.LoadScene("Level2");
+    }
+    public void loaderLvl3()
+    {
+        SceneManager.LoadScene("Level3");
     }
     public void loaderMenu()
     {
