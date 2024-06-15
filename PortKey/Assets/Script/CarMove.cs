@@ -4,6 +4,9 @@ using TMPro;
 
 public class CarMove : MonoBehaviour
 {
+    private string defaultLeftCarName = "CarLeft";
+    private string defaultRightCarName = "CarRight";
+
     public float carSpeed = 300f;
 
     public bool actionAD = false;
@@ -20,6 +23,9 @@ public class CarMove : MonoBehaviour
 
     public bool reversed = false;
 
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 300f;
+
 
     void Start()
     {
@@ -27,12 +33,13 @@ public class CarMove : MonoBehaviour
 
     void Update()
     {
+        ShootBullet();
         if (!canMove)
         {
             return;
         }
 
-        float posX = transform.GetComponent<RectTransform>().anchoredPosition.x;
+        float posX = transform.position.x;
 
         if (transform.name == "CarLeft")
         {
@@ -46,7 +53,8 @@ public class CarMove : MonoBehaviour
                 {
                     transform.Translate(Vector3.right * carSpeed * Time.deltaTime);
                 }
-            } else
+            }
+            else
             {
                 if (Input.GetKey(KeyCode.A) && posX < boundaryRight)
                 {
@@ -71,7 +79,9 @@ public class CarMove : MonoBehaviour
                 {
                     transform.Translate(Vector3.right * carSpeed * Time.deltaTime);
                 }
-            } else {
+            }
+            else
+            {
                 if (Input.GetKey(KeyCode.LeftArrow) && posX < boundaryRight)
                 {
                     transform.Translate(Vector3.left * carSpeed * Time.deltaTime);
@@ -83,6 +93,60 @@ public class CarMove : MonoBehaviour
             }
         }
 
+
+    }
+
+    void ShootBullet()
+    {
+        LeftCarShooting();
+        RightCarShooting();
+    }
+
+    void LeftCarShooting()
+    {
+        if (transform.name == defaultLeftCarName)
+        {
+            if (Input.GetKeyDown(KeyCode.S) && bulletPrefab != null)
+            {
+
+                CreateBullet(transform);
+            }
+
+        }
+    }
+
+
+    void RightCarShooting()
+    {
+        if (transform.name == defaultRightCarName)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow) && bulletPrefab != null)
+            {
+                CreateBullet(transform);
+            }
+        }
+    }
+
+    void CreateBullet(Transform tmpRef)
+    {
+        var bullet = Instantiate(bulletPrefab, tmpRef.position, tmpRef.rotation);
+
+        bullet.GetComponent<Rigidbody2D>().velocity = tmpRef.up * bulletSpeed;
+
+        GameObject obj = GameObject.Find("Canvas");
+
+        // Important for bullet to be displayed on canvas
+        if (obj != null)
+        {
+            bullet.transform.SetParent(obj.transform);
+        }
+        else
+        {
+            Debug.Log("Canvas obj not found");
+            bullet.transform.SetParent(tmpRef);
+        }
+
+        bullet.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 
     }
 
@@ -99,6 +163,12 @@ public class CarMove : MonoBehaviour
             winText.gameObject.SetActive(true);
             winText.text = "YOU WIN";
             winText.color = Color.green;
+
+            // Deaths after Control Flip Metric #4
+            gameController.deathDueToControlsFlip = reversed;
+            // First Level Completion Metric #2 
+            gameController.reasonforFinshingLevel1 = 1;
+
             gameController.StopScoreCalculation(transform.name);
         }
 
@@ -107,6 +177,9 @@ public class CarMove : MonoBehaviour
             DisplaySwithcMessage();
             Destroy(other.gameObject);
             gameController.EnemyControlReverse(transform.name);
+
+            // Metric #3
+            gameController.totalSwitchingPropCollected += 1;
         }
 
         if (other.gameObject.name.Contains("ScoreUp"))
