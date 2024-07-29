@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - LeftHealthBar
+  - RightHealthBar
+  - CountDown
+  - Lives
+  - HeartProp
+  - Bullet
   layers:
   - Default
   - TransparentFX

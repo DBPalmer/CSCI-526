@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:PortKey/Assets/RestClient.meta
 guid: 3110314f7952b6c45976ec05e8d3c539
+========
+guid: 4ac34ac0d562c4a66b9b1596e94b61c9
+>>>>>>>> Stashed changes:PortKey/Assets/Sounds.meta
 folderAsset: yes
 timeCreated: 1509415538
 licenseType: Free
